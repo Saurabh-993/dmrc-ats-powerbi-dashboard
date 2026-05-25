@@ -14,7 +14,7 @@ as **IT & Data Analyst at Delhi Metro Railway Corporation
 
 ![DMRC Dashboard](screenshots/dashboard_preview.png)
 
----
+[View Full PDF Report](screenshots/dashboard_preview.pdf)
 
 ## 📏 Project Scale
 
@@ -91,3 +91,14 @@ See [`schema/database_schema.sql`](schema/database_schema.sql)
 ---
 
 ## 📁 Repository Structure
+```
+├── README.md
+├── schema/
+│   └── database_schema.sql 
+├── data/
+│   └── sample_data.csv 
+├── dashboards/
+│   └── dmrc_dashboard.pbix
+├── screenshots/
+    └── dashboard_preview.pdf
+    └── dashboard_preview.png
