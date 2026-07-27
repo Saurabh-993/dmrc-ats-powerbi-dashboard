@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#0a0a0c"/>
+      <stop offset="55%"  stop-color="#100a10"/>
+      <stop offset="100%" stop-color="#0a0a0c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff4d9d" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#ff4d9d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ff4d9d"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b5b66"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="300" cy="430" rx="620" ry="420" fill="url(#glow)"/>
+  <ellipse cx="1350" cy="700" rx="480" ry="360" fill="url(#glow)" opacity="0.55"/>
+
+  <!-- ===== header ===== -->
+  <text x="80" y="96" fill="#f4f4f6" font-size="42" font-weight="700"
+        font-family="Inter, Helvetica, Arial, sans-serif">Architecture</text>
+  <text x="80" y="134" fill="#8a8a96" font-size="17" letter-spacing="2.5">
+    DMRC ATS &#183; 256 GB &#8594; SUB-SECOND KPIs
+  </text>
+  <line x1="80" y1="164" x2="1520" y2="164" stroke="#26262e" stroke-width="1"/>
+
+  <!-- ===== flow rail ===== -->
+  <line x1="150" y1="330" x2="1450" y2="330" stroke="#1e1e26" stroke-width="2"/>
+
+  <!-- = stage 1 : source = -->
+  <g>
+    <rect x="80" y="220" width="290" height="220" rx="16"
+          fill="#131318" stroke="#2c2c36" stroke-width="1.5"/>
+    <rect x="80" y="220" width="290" height="4" rx="2" fill="#ff4d9d"/>
+    <text x="106" y="262" fill="#ff4d9d" font-size="13" letter-spacing="2.5">01 &#183; SOURCE</text>
+    <text x="106" y="302" fill="#f4f4f6" font-size="25" font-weight="600"
+          font-family="Inter, Helvetica, Arial, sans-serif">DMRC ATS export</text>
+    <text x="106" y="340" fill="#8a8a96" font-size="15">Automatic Ticketing System</text>
+    <text x="106" y="366" fill="#8a8a96" font-size="15">10 abbreviated columns</text>
+    <text x="106" y="392" fill="#8a8a96" font-size="15">untyped, denormalised</text>
+    <text x="106" y="422" fill="#2dd4bf" font-size="16" font-weight="600">256 GB raw</text>
+  </g>
+  <line x1="382" y1="330" x2="428" y2="330" stroke="#5b5b66" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- = stage 2 : ingest = -->
+  <g>
+    <rect x="440" y="220" width="290" height="220" rx="16"
+          fill="#131318" stroke="#2c2c36" stroke-width="1.5"/>
+    <rect x="440" y="220" width="290" height="4" rx="2" fill="#f5b544"/>
+    <text x="466" y="262" fill="#f5b544" font-size="13" letter-spacing="2.5">02 &#183; INGEST</text>
+    <text x="466" y="302" fill="#f4f4f6" font-size="25" font-weight="600"
+          font-family="Inter, Helvetica, Arial, sans-serif">Python &#183; Pandas</text>
+    <text x="466" y="340" fill="#8a8a96" font-size="15">chunked reader, no full load</text>
+    <text x="466" y="366" fill="#8a8a96" font-size="15">type coercion + null policy</text>
+    <text x="466" y="392" fill="#8a8a96" font-size="15">stratified 20% sample</text>
+    <text x="466" y="422" fill="#2dd4bf" font-size="16" font-weight="600">~51 GB retained</text>
+  </g>
+  <line x1="742" y1="330" x2="788" y2="330" stroke="#5b5b66" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- = stage 3 : model = -->
+  <g>
+    <rect x="800" y="220" width="290" height="220" rx="16"
+          fill="#131318" stroke="#2c2c36" stroke-width="1.5"/>
+    <rect x="800" y="220" width="290" height="4" rx="2" fill="#7dd35f"/>
+    <text x="826" y="262" fill="#7dd35f" font-size="13" letter-spacing="2.5">03 &#183; MODEL</text>
+    <text x="826" y="302" fill="#f4f4f6" font-size="25" font-weight="600"
+          font-family="Inter, Helvetica, Arial, sans-serif">PostgreSQL</text>
+    <text x="826" y="340" fill="#8a8a96" font-size="15">star schema, 1 fact + 4 dims</text>
+    <text x="826" y="366" fill="#8a8a96" font-size="15">6 indexes on filter columns</text>
+    <text x="826" y="392" fill="#8a8a96" font-size="15">window fns &#8594; rolling avg view</text>
+    <text x="826" y="422" fill="#2dd4bf" font-size="16" font-weight="600">66M rows queryable</text>
+  </g>
+  <line x1="1102" y1="330" x2="1148" y2="330" stroke="#5b5b66" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- = stage 4 : serve = -->
+  <g>
+    <rect x="1160" y="220" width="290" height="220" rx="16"
+          fill="#131318" stroke="#2dd4bf" stroke-width="1.5"/>
+    <rect x="1160" y="220" width="290" height="4" rx="2" fill="#2dd4bf"/>
+    <text x="1186" y="262" fill="#2dd4bf" font-size="13" letter-spacing="2.5">04 &#183; SERVE</text>
+    <text x="1186" y="302" fill="#f4f4f6" font-size="25" font-weight="600"
+          font-family="Inter, Helvetica, Arial, sans-serif">Power BI</text>
+    <text x="1186" y="340" fill="#8a8a96" font-size="15">import mode, flat extract</text>
+    <text x="1186" y="366" fill="#8a8a96" font-size="15">16 visuals &#183; 5 slicers</text>
+    <text x="1186" y="392" fill="#8a8a96" font-size="15">cross-filtered drill-down</text>
+    <text x="1186" y="422" fill="#2dd4bf" font-size="16" font-weight="600">sub-second response</text>
+  </g>
+
+  <!-- ===== column mapping strip ===== -->
+  <rect x="80" y="500" width="1370" height="150" rx="16"
+        fill="#0f0f14" stroke="#22222a" stroke-width="1.5"/>
+  <text x="106" y="536" fill="#6f6f7c" font-size="13" letter-spacing="2.5">SEMANTIC LAYER &#183; RAW &#8594; MODELLED</text>
+
+  <g font-size="15">
+    <text x="106" y="578" fill="#ff8ec0">Sta, Dest</text>
+    <text x="240" y="578" fill="#4a4a56">&#8594;</text>
+    <text x="272" y="578" fill="#cfcfd8">origin_station_id, dest_station_id</text>
+
+    <text x="106" y="610" fill="#ff8ec0">Line, LineCC</text>
+    <text x="240" y="610" fill="#4a4a56">&#8594;</text>
+    <text x="272" y="610" fill="#cfcfd8">line_id &#8594; dim_line</text>
+
+    <text x="620" y="578" fill="#ff8ec0">PrType, TxT, FarT</text>
+    <text x="800" y="578" fill="#4a4a56">&#8594;</text>
+    <text x="832" y="578" fill="#cfcfd8">passenger_type_id, txn_type, fare_type</text>
+
+    <text x="620" y="610" fill="#ff8ec0">Value</text>
+    <text x="800" y="610" fill="#4a4a56">&#8594;</text>
+    <text x="832" y="610" fill="#cfcfd8">fare_amount NUMERIC(10,2)</text>
+
+    <text x="1180" y="578" fill="#ff8ec0">InsertionDateTime</text>
+    <text x="1180" y="610" fill="#cfcfd8">&#8594; txn_timestamp &#8594; dim_date</text>
+  </g>
+
+  <!-- ===== outcome strip ===== -->
+  <line x1="80" y1="712" x2="1450" y2="712" stroke="#22222a" stroke-width="1"/>
+  <text x="80" y="748" fill="#6f6f7c" font-size="13" letter-spacing="2.5">WHAT IT SURFACED</text>
+
+  <g font-family="Inter, Helvetica, Arial, sans-serif">
+    <text x="80"   y="806" fill="#f4f4f6" font-size="34" font-weight="700">51.16%</text>
+    <text x="80"   y="836" fill="#8a8a96" font-size="14" font-family="ui-monospace, monospace">revenue on one line</text>
+
+    <text x="430"  y="806" fill="#f4f4f6" font-size="34" font-weight="700">&#8377;39.53</text>
+    <text x="430"  y="836" fill="#8a8a96" font-size="14" font-family="ui-monospace, monospace">avg ticket value</text>
+
+    <text x="790"  y="806" fill="#2dd4bf" font-size="34" font-weight="700">+3.4%</text>
+    <text x="790"  y="836" fill="#8a8a96" font-size="14" font-family="ui-monospace, monospace">daily revenue vs target</text>
+
+    <text x="1180" y="806" fill="#f4f4f6" font-size="34" font-weight="700">200+</text>
+    <text x="1180" y="836" fill="#8a8a96" font-size="14" font-family="ui-monospace, monospace">stations, O&#8594;D mapped</text>
+  </g>
+
+  <text x="1450" y="876" fill="#3d3d47" font-size="12" text-anchor="end">
+    No DMRC data is reproduced. Figures are aggregate findings only.
+  </text>
+</svg>
