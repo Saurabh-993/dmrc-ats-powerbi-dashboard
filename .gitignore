@@ -1,0 +1,52 @@
+# =====================================================================
+#  CRITICAL — NDA PROTECTION
+# ---------------------------------------------------------------------
+#  A .pbix file embeds its entire data model inside the file. The
+#  original DMRC report is ~69 MB precisely because the real ATS data
+#  is compiled into it. Committing that file would publish DMRC
+#  operational data to a public repository, regardless of what the
+#  README says about confidentiality.
+#
+#  So: all .pbix files are ignored by default.
+#
+#  The rebuilt report runs on synthetic data only and IS safe to
+#  publish. It is whitelisted by exact name below — name your rebuild
+#  dmrc_ats_synthetic.pbix to match.
+# =====================================================================
+
+*.pbix
+*.pbit
+!dmrc_ats_synthetic.pbix
+
+# Original DMRC build — never commit, under any name
+dmrc project.pbix
+dashboards/
+**/dmrc_dashboard.pbix
+
+# Any real extract that may land here during local work
+data/raw/
+data/*_real.csv
+data/ats_export*.csv
+*.bak
+
+# Large regenerated datasets — the committed 50k sample is enough;
+# anything bigger should be regenerated, not stored
+data/sample_data_*.csv
+
+# Personal working notes — build scaffolding, prompts, drafts.
+# Not useful to a repo visitor; keep local.
+_local/
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+desktop.ini
+~$*
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

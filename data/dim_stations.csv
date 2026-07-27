@@ -1,0 +1,174 @@
+station_id,station_name,line_id,line_name,is_interchange
+1,Samaypur Badli,1,Yellow Line,FALSE
+2,Rohini Sector 18-19,1,Yellow Line,FALSE
+3,Haiderpur Badli Mor,1,Yellow Line,FALSE
+4,Jahangirpuri,1,Yellow Line,FALSE
+5,Adarsh Nagar,1,Yellow Line,FALSE
+6,Azadpur,1,Yellow Line,FALSE
+7,Model Town,1,Yellow Line,FALSE
+8,Guru Tegh Bahadur Nagar,1,Yellow Line,FALSE
+9,Vishwavidyalaya,1,Yellow Line,FALSE
+10,Vidhan Sabha,1,Yellow Line,FALSE
+11,Civil Lines,1,Yellow Line,FALSE
+12,Kashmere Gate,1,Yellow Line,TRUE
+13,Chandni Chowk,1,Yellow Line,FALSE
+14,Chawri Bazar,1,Yellow Line,FALSE
+15,New Delhi,1,Yellow Line,TRUE
+16,Rajiv Chowk,1,Yellow Line,TRUE
+17,Patel Chowk,1,Yellow Line,FALSE
+18,Central Secretariat,1,Yellow Line,TRUE
+19,Udyog Bhawan,1,Yellow Line,FALSE
+20,Lok Kalyan Marg,1,Yellow Line,FALSE
+21,Jor Bagh,1,Yellow Line,FALSE
+22,INA,1,Yellow Line,TRUE
+23,AIIMS,1,Yellow Line,FALSE
+24,Green Park,1,Yellow Line,FALSE
+25,Hauz Khas,1,Yellow Line,TRUE
+26,Malviya Nagar,1,Yellow Line,FALSE
+27,Saket,1,Yellow Line,FALSE
+28,Qutab Minar,1,Yellow Line,FALSE
+29,Chhatarpur,1,Yellow Line,FALSE
+30,Sultanpur,1,Yellow Line,FALSE
+31,Ghitorni,1,Yellow Line,FALSE
+32,Arjan Garh,1,Yellow Line,FALSE
+33,Guru Dronacharya,1,Yellow Line,FALSE
+34,Sikanderpur,1,Yellow Line,FALSE
+35,MG Road,1,Yellow Line,FALSE
+36,IFFCO Chowk,1,Yellow Line,FALSE
+37,HUDA City Centre,1,Yellow Line,TRUE
+38,Dwarka Sector 21,2,Blue Line (N),FALSE
+39,Dwarka Sector 8,2,Blue Line (N),FALSE
+40,Dwarka Sector 9,2,Blue Line (N),FALSE
+41,Dwarka Sector 10,2,Blue Line (N),FALSE
+42,Dwarka Sector 11,2,Blue Line (N),FALSE
+43,Dwarka Sector 12,2,Blue Line (N),FALSE
+44,Dwarka Sector 13,2,Blue Line (N),FALSE
+45,Dwarka Sector 14,2,Blue Line (N),FALSE
+46,Dwarka,2,Blue Line (N),TRUE
+47,Dwarka Mor,2,Blue Line (N),FALSE
+48,Nawada,2,Blue Line (N),FALSE
+49,Uttam Nagar West,2,Blue Line (N),FALSE
+50,Uttam Nagar East,2,Blue Line (N),FALSE
+51,Janakpuri West,2,Blue Line (N),TRUE
+52,Janakpuri East,2,Blue Line (N),FALSE
+53,Tilak Nagar,2,Blue Line (N),FALSE
+54,Subhash Nagar,2,Blue Line (N),FALSE
+55,Tagore Garden,2,Blue Line (N),FALSE
+56,Rajouri Garden,2,Blue Line (N),FALSE
+57,Ramesh Nagar,2,Blue Line (N),FALSE
+58,Moti Nagar,2,Blue Line (N),FALSE
+59,Kirti Nagar,2,Blue Line (N),FALSE
+60,Shadipur,2,Blue Line (N),FALSE
+61,Patel Nagar,2,Blue Line (N),FALSE
+62,Rajendra Place,2,Blue Line (N),FALSE
+63,Karol Bagh,2,Blue Line (N),FALSE
+64,Jhandewalan,2,Blue Line (N),FALSE
+65,RK Ashram Marg,2,Blue Line (N),FALSE
+66,Barakhamba Road,2,Blue Line (N),FALSE
+67,Mandi House,2,Blue Line (N),TRUE
+68,Supreme Court,2,Blue Line (N),FALSE
+69,Indraprastha,2,Blue Line (N),FALSE
+70,Yamuna Bank,2,Blue Line (N),TRUE
+71,Akshardham,2,Blue Line (N),FALSE
+72,Mayur Vihar-I,2,Blue Line (N),FALSE
+73,Mayur Vihar Extension,2,Blue Line (N),FALSE
+74,New Ashok Nagar,2,Blue Line (N),FALSE
+75,Noida Sector 15,2,Blue Line (N),FALSE
+76,Noida Sector 16,2,Blue Line (N),FALSE
+77,Noida Sector 18,2,Blue Line (N),FALSE
+78,Botanical Garden,2,Blue Line (N),TRUE
+79,Golf Course,2,Blue Line (N),FALSE
+80,Noida City Centre,2,Blue Line (N),FALSE
+81,Noida Sector 34,2,Blue Line (N),FALSE
+82,Noida Sector 52,2,Blue Line (N),FALSE
+83,Noida Sector 61,2,Blue Line (N),FALSE
+84,Noida Sector 59,2,Blue Line (N),FALSE
+85,Noida Sector 62,2,Blue Line (N),FALSE
+86,Noida Electronic City,2,Blue Line (N),FALSE
+87,Rithala,3,Red Line,FALSE
+88,Rohini West,3,Red Line,FALSE
+89,Rohini East,3,Red Line,FALSE
+90,Pitampura,3,Red Line,FALSE
+91,Kohat Enclave,3,Red Line,FALSE
+92,Netaji Subhash Place,3,Red Line,TRUE
+93,Keshav Puram,3,Red Line,FALSE
+94,Kanhaiya Nagar,3,Red Line,FALSE
+95,Inderlok,3,Red Line,TRUE
+96,Shastri Nagar,3,Red Line,FALSE
+97,Pratap Nagar,3,Red Line,FALSE
+98,Pulbangash,3,Red Line,FALSE
+99,Tis Hazari,3,Red Line,FALSE
+100,Shastri Park,3,Red Line,FALSE
+101,Seelampur,3,Red Line,FALSE
+102,Welcome,3,Red Line,TRUE
+103,Shahdara,3,Red Line,FALSE
+104,Mansarovar Park,3,Red Line,FALSE
+105,Jhilmil,3,Red Line,FALSE
+106,Dilshad Garden,3,Red Line,FALSE
+107,Shaheed Nagar,3,Red Line,FALSE
+108,Raj Bagh,3,Red Line,FALSE
+109,Rajendra Nagar,3,Red Line,FALSE
+110,Shyam Park,3,Red Line,FALSE
+111,Mohan Nagar,3,Red Line,FALSE
+112,Arthala,3,Red Line,FALSE
+113,Hindon River,3,Red Line,FALSE
+114,Shaheed Sthal,3,Red Line,FALSE
+115,Laxmi Nagar,4,Blue Line (V),FALSE
+116,Nirman Vihar,4,Blue Line (V),FALSE
+117,Preet Vihar,4,Blue Line (V),FALSE
+118,Karkarduma,4,Blue Line (V),FALSE
+119,Anand Vihar,4,Blue Line (V),TRUE
+120,Kaushambi,4,Blue Line (V),FALSE
+121,Vaishali,4,Blue Line (V),FALSE
+122,Ashok Park Main,5,Green Line,FALSE
+123,Punjabi Bagh,5,Green Line,FALSE
+124,Shivaji Park,5,Green Line,FALSE
+125,Madipur,5,Green Line,FALSE
+126,Paschim Vihar East,5,Green Line,FALSE
+127,Paschim Vihar West,5,Green Line,FALSE
+128,Peera Garhi,5,Green Line,FALSE
+129,Udyog Nagar,5,Green Line,FALSE
+130,Maharaja Surajmal Stadium,5,Green Line,FALSE
+131,Nangloi,5,Green Line,FALSE
+132,Nangloi Railway Station,5,Green Line,FALSE
+133,Rajdhani Park,5,Green Line,FALSE
+134,Mundka,5,Green Line,FALSE
+135,Mundka Industrial Area,5,Green Line,FALSE
+136,Ghevra,5,Green Line,FALSE
+137,Tikri Kalan,5,Green Line,FALSE
+138,Tikri Border,5,Green Line,FALSE
+139,Pandit Shree Ram Sharma,5,Green Line,FALSE
+140,Bahadurgarh City,5,Green Line,FALSE
+141,Brigadier Hoshiar Singh,5,Green Line,FALSE
+142,Satguru Ram Singh Marg,5,Green Line,FALSE
+143,Lal Qila,6,Violet Line,FALSE
+144,Jama Masjid,6,Violet Line,FALSE
+145,Delhi Gate,6,Violet Line,FALSE
+146,ITO,6,Violet Line,FALSE
+147,Janpath,6,Violet Line,FALSE
+148,Khan Market,6,Violet Line,FALSE
+149,Jawaharlal Nehru Stadium,6,Violet Line,FALSE
+150,Jangpura,6,Violet Line,FALSE
+151,Lajpat Nagar,6,Violet Line,TRUE
+152,Moolchand,6,Violet Line,FALSE
+153,Kailash Colony,6,Violet Line,FALSE
+154,Nehru Place,6,Violet Line,FALSE
+155,Kalkaji Mandir,6,Violet Line,FALSE
+156,Govind Puri,6,Violet Line,FALSE
+157,Harkesh Nagar Okhla,6,Violet Line,FALSE
+158,Jasola Apollo,6,Violet Line,FALSE
+159,Sarita Vihar,6,Violet Line,FALSE
+160,Mohan Estate,6,Violet Line,FALSE
+161,Tughlakabad,6,Violet Line,FALSE
+162,Badarpur Border,6,Violet Line,FALSE
+163,Sarai,6,Violet Line,FALSE
+164,NHPC Chowk,6,Violet Line,FALSE
+165,Mewala Maharajpur,6,Violet Line,FALSE
+166,Sector 28 Faridabad,6,Violet Line,FALSE
+167,Badkal Mor,6,Violet Line,FALSE
+168,Old Faridabad,6,Violet Line,FALSE
+169,Neelam Chowk Ajronda,6,Violet Line,FALSE
+170,Bata Chowk,6,Violet Line,FALSE
+171,Escorts Mujesar,6,Violet Line,FALSE
+172,Sant Surdas Sihi,6,Violet Line,FALSE
+173,Raja Nahar Singh,6,Violet Line,FALSE

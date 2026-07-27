@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 780" width="1280" height="780" font-family="Segoe UI, Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="kpiGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFC72C" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFC72C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="780" fill="#0B0D11"/>
+
+  <text x="24" y="30" fill="#5C677D" font-size="12" letter-spacing="2">LAYOUT BLUEPRINT &#183; 1280 &#215; 720 CANVAS &#183; NOT A SCREENSHOT</text>
+
+  <g transform="translate(0,44)">
+    <rect x="0" y="0" width="1280" height="720" fill="#0F1116"/>
+
+    <!-- ============ LEFT FILTER RAIL ============ -->
+    <rect x="16" y="16" width="196" height="688" rx="12" fill="#141821" stroke="#252A34"/>
+    <text x="34" y="46" fill="#E8ECF3" font-size="15" font-weight="600">DMRC</text>
+    <text x="34" y="66" fill="#5C677D" font-size="10" letter-spacing="1.6">ATS ANALYTICS</text>
+    <line x1="34" y1="82" x2="194" y2="82" stroke="#252A34"/>
+
+    <text x="34" y="110" fill="#5C677D" font-size="9" letter-spacing="1.6">METRO LINE</text>
+    <g fill="#C9D1DE" font-size="11">
+      <rect x="30" y="120" width="168" height="26" rx="6" fill="#1C2029"/>
+      <text x="42" y="137">Yellow Line</text>
+      <rect x="30" y="150" width="168" height="26" rx="6" fill="#171A21"/>
+      <text x="42" y="167">Blue Line (N)</text>
+      <rect x="30" y="180" width="168" height="26" rx="6" fill="#171A21"/>
+      <text x="42" y="197">Red Line</text>
+      <rect x="30" y="210" width="168" height="26" rx="6" fill="#171A21"/>
+      <text x="42" y="227">Blue Line (V)</text>
+      <rect x="30" y="240" width="168" height="26" rx="6" fill="#171A21"/>
+      <text x="42" y="257">Green Line</text>
+      <rect x="30" y="270" width="168" height="26" rx="6" fill="#171A21"/>
+      <text x="42" y="287">Violet Line</text>
+    </g>
+
+    <text x="34" y="330" fill="#5C677D" font-size="9" letter-spacing="1.6">TICKET TYPE</text>
+    <g font-size="10">
+      <rect x="30" y="340" width="53" height="28" rx="6" fill="#171A21" stroke="#252A34"/>
+      <text x="43" y="358" fill="#C9D1DE">NCMC</text>
+      <rect x="88" y="340" width="53" height="28" rx="6" fill="#171A21" stroke="#252A34"/>
+      <text x="103" y="358" fill="#C9D1DE">QR</text>
+      <rect x="146" y="340" width="52" height="28" rx="6" fill="#171A21" stroke="#252A34"/>
+      <text x="158" y="358" fill="#C9D1DE">Other</text>
+    </g>
+
+    <text x="34" y="402" fill="#5C677D" font-size="9" letter-spacing="1.6">DATE RANGE</text>
+    <rect x="30" y="412" width="168" height="30" rx="6" fill="#171A21" stroke="#252A34"/>
+    <text x="42" y="432" fill="#C9D1DE" font-size="10">28 Apr &#8211; 04 Aug 2024</text>
+    <line x1="38" y1="458" x2="190" y2="458" stroke="#252A34" stroke-width="3"/>
+    <circle cx="38" cy="458" r="6" fill="#2DD4A8"/>
+    <circle cx="190" cy="458" r="6" fill="#2DD4A8"/>
+
+    <rect x="30" y="490" width="168" height="34" rx="8" fill="#1C2029" stroke="#2DD4A8"/>
+    <text x="114" y="512" fill="#2DD4A8" font-size="11" font-weight="600" text-anchor="middle">Reset filters</text>
+
+    <line x1="34" y1="618" x2="194" y2="618" stroke="#252A34"/>
+    <text x="34" y="640" fill="#3E4658" font-size="8">Synthetic dataset. Original built</text>
+    <text x="34" y="654" fill="#3E4658" font-size="8">at DMRC on live ATS data under</text>
+    <text x="34" y="668" fill="#3E4658" font-size="8">NDA. See repo README.</text>
+    <text x="34" y="690" fill="#2DD4A8" font-size="8">github.com/you/dmrc-ats-analytics</text>
+
+    <!-- ============ KPI ROW ============ -->
+    <g>
+      <rect x="228" y="16" width="248" height="104" rx="12" fill="#171A21" stroke="#252A34"/>
+      <rect x="228" y="16" width="248" height="104" rx="12" fill="url(#kpiGlow)"/>
+      <text x="250" y="46" fill="#5C677D" font-size="9" letter-spacing="1.6">TOTAL FOOTFALL</text>
+      <text x="250" y="92" fill="#FFFFFF" font-size="38" font-weight="300">50,000</text>
+
+      <rect x="488" y="16" width="248" height="104" rx="12" fill="#171A21" stroke="#252A34"/>
+      <text x="510" y="46" fill="#5C677D" font-size="9" letter-spacing="1.6">TOTAL REVENUE</text>
+      <text x="510" y="92" fill="#FFFFFF" font-size="38" font-weight="300">&#8377;19.8L</text>
+
+      <rect x="748" y="16" width="248" height="104" rx="12" fill="#171A21" stroke="#252A34"/>
+      <text x="770" y="46" fill="#5C677D" font-size="9" letter-spacing="1.6">AVG TICKET VALUE</text>
+      <text x="770" y="92" fill="#FFFFFF" font-size="38" font-weight="300">&#8377;39.69</text>
+
+      <rect x="1008" y="16" width="256" height="104" rx="12" fill="#171A21" stroke="#252A34"/>
+      <text x="1030" y="46" fill="#5C677D" font-size="9" letter-spacing="1.6">STATIONS COVERED</text>
+      <text x="1030" y="92" fill="#FFFFFF" font-size="38" font-weight="300">173</text>
+    </g>
+
+    <!-- ============ ROW 2 : TREND + DONUT ============ -->
+    <rect x="228" y="134" width="662" height="272" rx="12" fill="#171A21" stroke="#252A34"/>
+    <text x="250" y="162" fill="#E8ECF3" font-size="12" font-weight="600">Daily Revenue vs 30-Day Rolling Average</text>
+    <g stroke-width="2.5" fill="none">
+      <polyline points="256,340 300,318 344,352 388,300 432,330 476,290 520,318 564,276 608,306 652,268 696,296 740,258 784,286 828,250 866,272"
+                stroke="#FFC72C"/>
+      <polyline points="256,332 300,328 344,326 388,320 432,316 476,310 520,306 564,300 608,296 652,290 696,286 740,280 784,276 828,270 866,266"
+                stroke="#3B8FE0" stroke-dasharray="6 5"/>
+    </g>
+    <g font-size="9" fill="#98A2B8">
+      <text x="250" y="392">May</text><text x="410" y="392">Jun</text>
+      <text x="570" y="392">Jul</text><text x="730" y="392">Aug</text>
+      <circle cx="700" cy="158" r="4" fill="#FFC72C"/><text x="712" y="162">Daily</text>
+      <circle cx="770" cy="158" r="4" fill="#3B8FE0"/><text x="782" y="162">30-day rolling</text>
+    </g>
+
+    <rect x="902" y="134" width="362" height="272" rx="12" fill="#171A21" stroke="#252A34"/>
+    <text x="924" y="162" fill="#E8ECF3" font-size="12" font-weight="600">Revenue Share by Line</text>
+    <g transform="translate(1010,286)">
+      <circle r="72" fill="none" stroke="#FFC72C" stroke-width="26"
+              stroke-dasharray="232 220" transform="rotate(-90)"/>
+      <circle r="72" fill="none" stroke="#3B8FE0" stroke-width="26"
+              stroke-dasharray="70 382" transform="rotate(95)"/>
+      <circle r="72" fill="none" stroke="#FF4757" stroke-width="26"
+              stroke-dasharray="64 388" transform="rotate(151)"/>
+      <circle r="72" fill="none" stroke="#7DC3F5" stroke-width="26"
+              stroke-dasharray="41 411" transform="rotate(202)"/>
+      <circle r="72" fill="none" stroke="#2DD4A8" stroke-width="26"
+              stroke-dasharray="33 419" transform="rotate(235)"/>
+      <circle r="72" fill="none" stroke="#A78BFA" stroke-width="26"
+              stroke-dasharray="11 441" transform="rotate(262)"/>
+      <text y="-4" fill="#FFFFFF" font-size="26" font-weight="300" text-anchor="middle">51.4%</text>
+      <text y="16" fill="#5C677D" font-size="9" text-anchor="middle">YELLOW LINE</text>
+    </g>
+    <g font-size="9" fill="#98A2B8">
+      <text x="1150" y="240">Yellow  51.4%</text>
+      <text x="1150" y="262">Blue N  15.5%</text>
+      <text x="1150" y="284">Red     14.2%</text>
+      <text x="1150" y="306">Blue V   9.1%</text>
+      <text x="1150" y="328">Green    7.3%</text>
+      <text x="1150" y="350">Violet   2.5%</text>
+    </g>
+
+    <!-- ============ ROW 3 : STATIONS + MIX ============ -->
+    <rect x="228" y="422" width="510" height="282" rx="12" fill="#171A21" stroke="#252A34"/>
+    <text x="250" y="450" fill="#E8ECF3" font-size="12" font-weight="600">Top 10 Stations by Revenue</text>
+    <g font-size="9">
+      <text x="250" y="478" fill="#C9D1DE">Hauz Khas</text>
+      <rect x="360" y="468" width="340" height="13" rx="3" fill="#FFC72C"/>
+      <text x="250" y="500" fill="#C9D1DE">HUDA City Centre</text>
+      <rect x="360" y="490" width="146" height="13" rx="3" fill="#FFC72C"/>
+      <text x="250" y="522" fill="#C9D1DE">Rithala</text>
+      <rect x="360" y="512" width="136" height="13" rx="3" fill="#FF4757"/>
+      <text x="250" y="544" fill="#C9D1DE">Sikanderpur</text>
+      <rect x="360" y="534" width="119" height="13" rx="3" fill="#FFC72C"/>
+      <text x="250" y="566" fill="#C9D1DE">INA</text>
+      <rect x="360" y="556" width="102" height="13" rx="3" fill="#FFC72C"/>
+      <text x="250" y="588" fill="#C9D1DE">Pratap Nagar</text>
+      <rect x="360" y="578" width="100" height="13" rx="3" fill="#FF4757"/>
+      <text x="250" y="610" fill="#C9D1DE">New Delhi</text>
+      <rect x="360" y="600" width="99" height="13" rx="3" fill="#3B8FE0"/>
+      <text x="250" y="632" fill="#C9D1DE">Anand Vihar</text>
+      <rect x="360" y="622" width="94" height="13" rx="3" fill="#7DC3F5"/>
+      <text x="250" y="654" fill="#C9D1DE">Kashmere Gate</text>
+      <rect x="360" y="644" width="88" height="13" rx="3" fill="#FFC72C"/>
+      <text x="250" y="676" fill="#C9D1DE">Rajiv Chowk</text>
+      <rect x="360" y="666" width="82" height="13" rx="3" fill="#FFC72C"/>
+    </g>
+
+    <rect x="754" y="422" width="510" height="282" rx="12" fill="#171A21" stroke="#252A34"/>
+    <text x="776" y="450" fill="#E8ECF3" font-size="12" font-weight="600">Ticket Type Mix by Line</text>
+    <g font-size="8" fill="#98A2B8">
+      <rect x="1050" y="440" width="8" height="8" fill="#2DD4A8"/><text x="1064" y="448">NCMC</text>
+      <rect x="1110" y="440" width="8" height="8" fill="#3B8FE0"/><text x="1124" y="448">QR</text>
+      <rect x="1160" y="440" width="8" height="8" fill="#3E4658"/><text x="1174" y="448">Other</text>
+    </g>
+    <g>
+      <g transform="translate(790,470)">
+        <rect width="58" height="8"   fill="#2DD4A8"/>
+        <rect y="8"  width="58" height="52" fill="#3B8FE0"/>
+        <rect y="60" width="58" height="130" fill="#3E4658"/>
+      </g>
+      <g transform="translate(868,470)">
+        <rect width="58" height="6"   fill="#2DD4A8"/>
+        <rect y="6"  width="58" height="58" fill="#3B8FE0"/>
+        <rect y="64" width="58" height="126" fill="#3E4658"/>
+      </g>
+      <g transform="translate(946,470)">
+        <rect width="58" height="7"   fill="#2DD4A8"/>
+        <rect y="7"  width="58" height="49" fill="#3B8FE0"/>
+        <rect y="56" width="58" height="134" fill="#3E4658"/>
+      </g>
+      <g transform="translate(1024,470)">
+        <rect width="58" height="5"   fill="#2DD4A8"/>
+        <rect y="5"  width="58" height="61" fill="#3B8FE0"/>
+        <rect y="66" width="58" height="124" fill="#3E4658"/>
+      </g>
+      <g transform="translate(1102,470)">
+        <rect width="58" height="8"   fill="#2DD4A8"/>
+        <rect y="8"  width="58" height="54" fill="#3B8FE0"/>
+        <rect y="62" width="58" height="128" fill="#3E4658"/>
+      </g>
+      <g transform="translate(1180,470)">
+        <rect width="58" height="6"   fill="#2DD4A8"/>
+        <rect y="6"  width="58" height="56" fill="#3B8FE0"/>
+        <rect y="62" width="58" height="128" fill="#3E4658"/>
+      </g>
+    </g>
+    <g font-size="8" fill="#98A2B8" text-anchor="middle">
+      <text x="819" y="678">Yellow</text>
+      <text x="897" y="678">Blue N</text>
+      <text x="975" y="678">Red</text>
+      <text x="1053" y="678">Blue V</text>
+      <text x="1131" y="678">Green</text>
+      <text x="1209" y="678">Violet</text>
+    </g>
+  </g>
+</svg>

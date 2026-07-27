@@ -3,6 +3,15 @@
 Five images. Four for the portfolio chapter slots, one hero. Each must add
 something the others don't — never five crops of the same view.
 
+> **Capture the rebuilt report**, not the original `.pbix`. Build it first
+> using [`../docs/POWERBI_BUILD_GUIDE.md`](../docs/POWERBI_BUILD_GUIDE.md).
+>
+> **Nothing gets blurred.** The blur guidance below applied when the report ran
+> on live DMRC figures. The rebuild runs on synthetic data, so every number is
+> safe to show — and sharp, readable numbers with an honest attribution line on
+> the canvas beat blurred ones every time. Keep the blur notes only if you
+> choose to also publish a capture of the original file.
+
 **Universal export settings**
 
 - Power BI Desktop → **View → Page view → Actual size** before capturing. Fit-to-page rescales fonts and makes text soft.
