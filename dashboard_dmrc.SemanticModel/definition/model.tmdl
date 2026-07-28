@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["sample_data","dim_stations","dim_lines","_Measures"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table sample_data
+ref table dim_stations
+ref table dim_lines
+ref table dim_date
+ref table _Measures
+
+ref cultureInfo en-US
+

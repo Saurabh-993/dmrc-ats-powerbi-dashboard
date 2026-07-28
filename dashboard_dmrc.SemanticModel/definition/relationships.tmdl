@@ -1,0 +1,22 @@
+relationship AutoDetected_95781165-cee3-450d-b565-53b91b9b600f
+	fromColumn: sample_data.Station
+	toColumn: dim_stations.station_name
+
+relationship AutoDetected_2263abe2-c656-46fd-991f-0c3e45851585
+	fromColumn: dim_stations.line_id
+	toColumn: dim_lines.line_id
+
+relationship 09cea25d-5008-ee77-72e0-12130a424cf0
+	isActive: false
+	fromColumn: sample_data.Sta
+	toColumn: dim_stations.station_id
+
+relationship cc719ea8-76fe-6398-45bf-4aebf8b6e393
+	fromColumn: sample_data.InsertionDateTime
+	toColumn: dim_date.Date
+
+relationship 40a1e260-875f-8b2e-2d50-9b4059e88a3d
+	isActive: false
+	fromColumn: sample_data.Dest
+	toColumn: dim_stations.station_id
+

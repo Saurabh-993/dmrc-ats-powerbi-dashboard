@@ -7,16 +7,15 @@
 #  operational data to a public repository, regardless of what the
 #  README says about confidentiality.
 #
-#  So: all .pbix files are ignored by default.
+#  So: every .pbix is ignored, with no exceptions.
 #
-#  The rebuilt report runs on synthetic data only and IS safe to
-#  publish. It is whitelisted by exact name below — name your rebuild
-#  dmrc_ats_synthetic.pbix to match.
+#  The report IS still shareable — as a .pbip project (plain JSON +
+#  TMDL, no data embedded), which is committed. Anyone can open it and
+#  point it at the synthetic CSVs in data/.
 # =====================================================================
 
 *.pbix
 *.pbit
-!dmrc_ats_synthetic.pbix
 
 # Original DMRC build — never commit, under any name
 dmrc project.pbix
@@ -27,15 +26,28 @@ dashboards/
 data/raw/
 data/*_real.csv
 data/ats_export*.csv
-*.bak
 
 # Large regenerated datasets — the committed 50k sample is enough;
 # anything bigger should be regenerated, not stored
 data/sample_data_*.csv
 
-# Personal working notes — build scaffolding, prompts, drafts.
-# Not useful to a repo visitor; keep local.
+# =====================================================================
+#  Power BI project — local machine state, not part of the definition
+# =====================================================================
+**/.pbi/localSettings.json
+**/.pbi/editorSettings.json
+**/*.abf
+**/cache.abf
+
+# =====================================================================
+#  Working files — useful to me, noise to a repo visitor
+# =====================================================================
 _local/
+docs/layout_blueprint*.svg
+docs/layout_blueprint*.png
+screenshots/SHOT_LIST.md
+*.bak
+Readme.md.bak
 
 # OS / editor noise
 Thumbs.db

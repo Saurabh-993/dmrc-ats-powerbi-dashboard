@@ -1,0 +1,73 @@
+table dim_date
+	lineageTag: 3d7b9796-e677-4e96-81c8-ddaf0a9fe665
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 5ea6be52-04cc-426f-8dc9-08316fc89216
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 20ad9e27-99f5-4cf8-934f-bc02a03c22b4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 9611473b-3c1c-445d-9703-5f5c2230468d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		formatString: 0
+		lineageTag: f7be901c-ea74-40ed-85dd-893903715a31
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		lineageTag: 94db442d-1c1a-4dac-b730-8824b3df715f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DayName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b81fbd32-0ffa-49c1-b301-5cb20310aee2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsWeekend]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS (
+				    CALENDAR ( DATE ( 2024, 4, 28 ), DATE ( 2024, 8, 4 ) ),
+				    "Year",      YEAR ( [Date] ),
+				    "Month",     FORMAT ( [Date], "MMM" ),
+				    "MonthNo",   MONTH ( [Date] ),
+				    "DayName",   FORMAT ( [Date], "ddd" ),
+				    "IsWeekend", WEEKDAY ( [Date], 2 ) > 5
+				)
+
+	annotation PBI_Id = 37150303080b4c56a64c57c195bceda0
+

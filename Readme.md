@@ -37,6 +37,19 @@ Clone it, run the generator, load the schema, and the whole thing runs on your m
 
 > **On the two sets of numbers.** The figures in *Findings* below come from the live build at DMRC. The figures visible in the screenshot come from the synthetic dataset in `data/`, which is a fraction of network volume. They are deliberately not the same numbers — the synthetic set reproduces the *distributions* (line revenue share, ticket value, passenger mix), not the absolute totals.
 
+### Interactivity
+
+![Cross-filtering](screenshots/02_interactivity.png)
+
+*One click on the Metro Line slicer cross-filters every visual on the page: KPIs recompute, the trend rescales, the donut collapses to a single line, and the station ranking reorders to Yellow Line stops only.*
+
+### Open it yourself
+
+The report ships as a **Power BI project** (`dashboard_dmrc.pbip`) — plain JSON and
+TMDL, no data embedded. Open it in Power BI Desktop, point it at the three CSVs in
+`data/`, and you have the full model: star schema, nine DAX measures, a role-playing
+destination dimension, and both themes in [`docs/theme/`](docs/theme).
+
 ---
 
 ## Scale and findings — from the live build at DMRC
@@ -171,27 +184,36 @@ The generator checks its own output against the real distributions:
 
 ```
 ├── Readme.md
+├── dashboard_dmrc.pbip              Power BI project — open this
+├── dashboard_dmrc.Report/           report definition (PBIR, JSON per visual)
+├── dashboard_dmrc.SemanticModel/    model definition (TMDL: tables, measures, relationships)
 ├── data/
-│   ├── generate_sample.py       synthetic generator, stdlib only
-│   ├── sample_data.csv          50k transactions (fact table)
-│   ├── dim_stations.csv         173 stations (lookup)
-│   └── dim_lines.csv            6 lines (lookup)
+│   ├── generate_sample.py           synthetic generator, stdlib only
+│   ├── sample_data.csv              50k transactions (fact table)
+│   ├── dim_stations.csv             173 stations (lookup)
+│   └── dim_lines.csv                6 lines (lookup)
 ├── schema/
-│   └── database_schema.sql      raw landing + star schema + serving views
+│   └── database_schema.sql          raw landing + star schema + serving views
 ├── sql/
-│   ├── 01_load_raw_to_core.sql  raw → modelled mapping
-│   └── 02_analysis_queries.sql  the query behind every visual
+│   ├── 01_load_raw_to_core.sql      raw → modelled mapping
+│   └── 02_analysis_queries.sql      the query behind every visual
 ├── docs/
-│   ├── pipeline.svg             architecture diagram
-│   └── POWERBI_BUILD_GUIDE.md   rebuild the report from scratch
+│   ├── POWERBI_BUILD_GUIDE.md       rebuild the report from scratch
+│   ├── pipeline.svg / .png          architecture diagram
+│   └── theme/
+│       ├── dmrc_dark_theme.json     "Midnight"
+│       └── dmrc_light_theme.json    "Daylight"
 └── screenshots/
-    ├── 01_dashboard_full.png
-    ├── 02_interactivity.png
-    ├── 03_model_view.png
-    ├── 04_kpi_detail.png
-    ├── reference_spec.png       the brief we were given, for comparison
-    └── SHOT_LIST.md
+    ├── 01_dashboard_full.png        full report page
+    ├── 02_interactivity.png         unfiltered vs Yellow Line
+    ├── 03_architecture.png          pipeline diagram
+    ├── 04_kpi_detail.png            KPI row, trend and line share
+    └── reference_spec.png           the brief we were given, for comparison
 ```
+
+No `.pbix` is committed — a `.pbix` embeds its data model, and the original one
+contains real DMRC records. The `.pbip` project carries the same report and model
+as text, with no data inside it. See [`.gitignore`](.gitignore).
 
 ---
 

@@ -1,0 +1,53 @@
+table dim_lines
+	lineageTag: 08937cee-ead8-42bb-a7bf-6398082aae26
+
+	column line_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 65350a73-5dfc-4f5e-8f3a-c0d3020adabb
+		summarizeBy: none
+		sourceColumn: line_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metro Line'
+		dataType: string
+		lineageTag: 99f77124-c9aa-49ee-bbc4-b3adf52513c6
+		summarizeBy: none
+		sourceColumn: Metro Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_colour_cc
+		dataType: string
+		lineageTag: 48b9162d-4b1e-4233-9338-7c0958db9286
+		summarizeBy: none
+		sourceColumn: line_colour_cc
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_share_target_pct
+		dataType: double
+		lineageTag: 6a817143-3b3b-4249-8405-ff279c51a4cb
+		summarizeBy: none
+		sourceColumn: revenue_share_target_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_lines = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Code_projects\PowerBi & Excel\dmrc-powerBi\data\dim_lines.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"line_id", Int64.Type}, {"line_name", type text}, {"line_colour_cc", type text}, {"revenue_share_target_pct", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"line_name", "Metro Line"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

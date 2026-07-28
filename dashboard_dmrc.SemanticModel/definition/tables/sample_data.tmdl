@@ -1,0 +1,132 @@
+table sample_data
+	lineageTag: 5cde849c-e674-4a18-b519-145db666fc8f
+
+	column transaction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ed9f915-92fe-426e-925d-351df2458810
+		summarizeBy: sum
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sta
+		dataType: int64
+		formatString: 0
+		lineageTag: c7479cad-057d-490f-849d-41df50a6e48c
+		summarizeBy: sum
+		sourceColumn: Sta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Station
+		dataType: string
+		lineageTag: fdf8ba4f-a48f-439f-9ac8-bb17c81d7283
+		summarizeBy: none
+		sourceColumn: Station
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dest
+		dataType: int64
+		formatString: 0
+		lineageTag: e12377e2-0b1e-4cb4-a215-e22ac1e31cc4
+		summarizeBy: sum
+		sourceColumn: Dest
+
+		annotation SummarizationSetBy = Automatic
+
+	column dest_station_name
+		dataType: string
+		lineageTag: 4a625be8-f74d-4bf1-a93a-e9bccb56c567
+		summarizeBy: none
+		sourceColumn: dest_station_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: 1f32567e-8713-4f07-ab1d-7de09c742ff5
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineCC
+		dataType: string
+		lineageTag: 5a24866f-2f45-4ca2-939a-ada79d28d31c
+		summarizeBy: none
+		sourceColumn: LineCC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Type'
+		dataType: string
+		lineageTag: 9a4fe884-08f7-4935-951c-99fc6be2ff0b
+		summarizeBy: none
+		sourceColumn: Ticket Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column TxT
+		dataType: string
+		lineageTag: 7e10933c-da53-4e79-a13c-2de2f561a704
+		summarizeBy: none
+		sourceColumn: TxT
+
+		annotation SummarizationSetBy = Automatic
+
+	column FarT
+		dataType: string
+		lineageTag: 4e9b4621-e7d8-4691-804b-6a9d53d4c3e8
+		summarizeBy: none
+		sourceColumn: FarT
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: decimal
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		lineageTag: 48b04b62-ebe1-458e-81d5-6abcacf2df82
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	column TrxDetail
+		dataType: string
+		lineageTag: 1772e9d7-8515-48d4-b5dc-ef79b1cf2959
+		summarizeBy: none
+		sourceColumn: TrxDetail
+
+		annotation SummarizationSetBy = Automatic
+
+	column InsertionDateTime
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a0325be1-43c9-4ea6-866d-43fa0ff74992
+		summarizeBy: none
+		sourceColumn: InsertionDateTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition sample_data = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Code_projects\PowerBi & Excel\dmrc-powerBi\data\sample_data.csv"),[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Promoted Headers", {{"InsertionDateTime", each Text.BeforeDelimiter(_, " "), type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Text Before Delimiter",{{"InsertionDateTime", type date}, {"transaction_id", Int64.Type}, {"Sta", Int64.Type}, {"Dest", Int64.Type}, {"Value", Currency.Type}, {"station_name", type text}, {"dest_station_name", type text}, {"Line", type text}, {"LineCC", type text}, {"PrType", type text}, {"FarT", type text}, {"TrxDetail", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"PrType", "Ticket Type"}, {"station_name", "Station"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

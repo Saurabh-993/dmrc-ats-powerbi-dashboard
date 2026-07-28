@@ -1,0 +1,84 @@
+table _Measures
+	lineageTag: 4c76b9c1-6fcd-4280-999e-a68e061ab734
+
+	measure 'Total Footfall' = COUNTROWS ( sample_data )
+		formatString: #,0
+		lineageTag: bc2997e2-c937-4a66-80af-99c3c30bdf7f
+
+	measure 'Total Revenue' = SUM ( sample_data[Value] )
+		formatString: "₹"\ #,0;#,0\ -"₹";"₹"\ #,0
+		lineageTag: ddf2f309-b349-4ef7-b811-80990680a964
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Avg Ticket Value' = DIVIDE ( [Total Revenue], [Total Footfall] )
+		formatString: "₹"\ #,0.00;#,0.00\ -"₹";"₹"\ #,0.00
+		lineageTag: 87f2ce86-3d4d-4e9c-b182-c6d8432b57de
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Stations Covered' = DISTINCTCOUNT ( sample_data[Sta] )
+		formatString: 0
+		lineageTag: d12c33cf-6cb0-4484-84aa-cd58a8ceba5d
+
+	measure 'Daily Avg Revenue' = AVERAGEX ( VALUES ( dim_date[Date] ), [Total Revenue] )
+		formatString: "₹"\ #,0;#,0\ -"₹";"₹"\ #,0
+		lineageTag: cce773d7-822d-4734-8851-86743f5ae675
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Revenue 30D Rolling Avg' =
+			
+			AVERAGEX (
+			    DATESINPERIOD ( dim_date[Date], MAX ( dim_date[Date] ), -30, DAY ),
+			    CALCULATE ( [Total Revenue] )
+			)
+		formatString: "₹"\ #,0;#,0\ -"₹";"₹"\ #,0
+		lineageTag: f09f5dba-78d9-4159-8d37-9b504aee2208
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Revenue Share %' =
+			
+			DIVIDE ( [Total Revenue],
+			         CALCULATE ( [Total Revenue], REMOVEFILTERS ( dim_lines ) ) )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a7658fa5-3431-44e0-bd9a-cc9e3c0230db
+
+	measure 'Digital Adoption %' =
+			
+			DIVIDE (
+			    CALCULATE ( [Total Footfall],
+			                sample_data[Ticket Type] IN { "NCMC", "QR Ticket" } ),
+			    [Total Footfall] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c4e1ecfb-a467-4fcd-b103-d6106c13ab69
+
+	measure 'Revenue by Destination' =
+			
+			CALCULATE ( [Total Revenue],
+			            USERELATIONSHIP ( sample_data[Dest], dim_stations[station_id] ) )
+		formatString: "₹"\ #,0;#,0\ -"₹";"₹"\ #,0
+		lineageTag: 8a935a46-fb94-459e-abe5-790161b03ae9
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	column Column1
+		dataType: string
+		lineageTag: 8abbbf95-0bee-42ae-b9ab-277d9023f8db
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
